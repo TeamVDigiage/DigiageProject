@@ -11,7 +11,7 @@ public class EnemyRunningState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager state)
     {
-        Vector3 forwardMove = Vector3.forward * _speed * Time.deltaTime;
+        Vector3 forwardMove = state.transform.forward * _speed * Time.deltaTime;
         state.GetComponent<Rigidbody>().MovePosition(state.transform.position + forwardMove);
     }
 

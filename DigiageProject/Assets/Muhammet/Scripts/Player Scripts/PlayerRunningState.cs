@@ -15,7 +15,7 @@ public class PlayerRunningState : PlayerBaseState
         float horizontalInput = Input.GetAxis("Horizontal");
         Vector3 forwardMove = state.transform.forward * _speed * Time.deltaTime;
         Vector3 horizontalMove = state.transform.right * horizontalInput * _horizontalSpeed * Time.deltaTime;
-        state.GetComponent<Rigidbody>().MovePosition(state.transform.position + forwardMove + horizontalMove); //horizontalMove
+        state.GetComponent<Rigidbody>().MovePosition(state.transform.position + forwardMove + horizontalMove);
     }
 
     public override void OnTrigger(PlayerStateManager state, Collider collider)

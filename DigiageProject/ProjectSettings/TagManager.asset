@@ -4,14 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< Updated upstream
   - Enemy
   - Arrow
   - CollectableArrows
+=======
+  - Rotate
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - RotatableObject
   - Water
   - UI
   - 

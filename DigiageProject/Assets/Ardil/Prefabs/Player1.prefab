@@ -11,16 +11,12 @@ GameObject:
   - component: {fileID: 4911344274986377367}
   - component: {fileID: 459598752826799018}
   - component: {fileID: 8183181556787127416}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   - component: {fileID: 46737049488691652}
   - component: {fileID: 86970815}
   - component: {fileID: 86970810}
   - component: {fileID: 86970816}
   m_Layer: 3
->>>>>>> Stashed changes
-  m_Name: Player
+  m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01205f3d6ae6b0b459693f5e2cee80c7, type: 2}
+  - {fileID: 2100000, guid: 52adaae393fac4e449c473189c3e64c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,8 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!136 &46737049488691652
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -147,4 +141,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99fb4fc9eea23b441ab8e221884f7874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> Stashed changes

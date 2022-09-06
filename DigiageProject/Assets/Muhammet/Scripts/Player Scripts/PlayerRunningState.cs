@@ -13,8 +13,8 @@ public class PlayerRunningState : PlayerBaseState
     public override void UpdateState(PlayerStateManager state)
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        Vector3 forwardMove = Vector3.forward * _speed * Time.deltaTime;
-        Vector3 horizontalMove = Vector3.right * horizontalInput * _horizontalSpeed * Time.deltaTime;
+        Vector3 forwardMove = state.transform.forward * _speed * Time.deltaTime;
+        Vector3 horizontalMove = state.transform.right * horizontalInput * _horizontalSpeed * Time.deltaTime;
         state.GetComponent<Rigidbody>().MovePosition(state.transform.position + forwardMove + horizontalMove); //horizontalMove
     }
 

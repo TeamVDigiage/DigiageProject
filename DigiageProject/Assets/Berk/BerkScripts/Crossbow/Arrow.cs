@@ -43,8 +43,6 @@ public class Arrow : MonoBehaviour
         Vector3 targetPosition = closestEnemy.transform.position;
         Vector3 currentPosition = this.transform.position;
 
-        if (Vector3.Distance(currentPosition, targetPosition) > .1f)
-        {
             Vector3 directionOfTravel = targetPosition - currentPosition;
 
             directionOfTravel.Normalize();
@@ -57,6 +55,5 @@ public class Arrow : MonoBehaviour
 
             transform.LookAt(targetPosition);
             transform.rotation *= Quaternion.Euler(90, 0, 0);
-        }
     }
 }

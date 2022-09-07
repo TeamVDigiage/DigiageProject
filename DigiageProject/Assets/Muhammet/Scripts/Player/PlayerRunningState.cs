@@ -18,8 +18,13 @@ public class PlayerRunningState : PlayerBaseState
         state.GetComponent<Rigidbody>().MovePosition(state.transform.position + forwardMove + horizontalMove);
     }
 
-    public override void OnTrigger(PlayerStateManager state, Collider collider)
+    public override void OnTriggerEnter(PlayerStateManager state, Collider other)
     {
-
+        if (other.TryGetComponent(out EnemyStateManager enemy))
+        {
+            Debug.Log("Enemy hit");
+            state.SwitchState(state.DeathState);
+            Object.Destroy(other.gameObject);
+        }
     }
 }

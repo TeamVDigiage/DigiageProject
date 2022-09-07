@@ -36,12 +36,14 @@ public class SpellSpawner : MonoBehaviour
                 {
                     i = 0;
                 }
+                Pool[i].transform.position = transform.position;
                 Pool[i].SetActive(true);
+                Pool[i].transform.localScale = Vector3.one;
                 Pool[i].transform.position = spawnPoint[spawnindex].position;
                 i++;
                 spawnRare = Time.time + spawnDelay;
             }
         }
-        
+
     }
 }

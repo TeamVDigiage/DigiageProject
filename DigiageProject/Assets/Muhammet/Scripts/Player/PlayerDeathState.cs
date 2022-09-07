@@ -4,7 +4,8 @@ public class PlayerDeathState : PlayerBaseState
 {
     public override void EnterState(PlayerStateManager state)
     {
-
+        Debug.Log("Player is death");
+        GameOverController.Instance.SetGameOver();
     }
 
     public override void UpdateState(PlayerStateManager state)
@@ -12,11 +13,8 @@ public class PlayerDeathState : PlayerBaseState
 
     }
 
-    public override void OnTrigger(PlayerStateManager state, Collider other)
+    public override void OnTriggerEnter(PlayerStateManager state, Collider other)
     {
-        if(other.TryGetComponent(out EnemyStateManager enemy))
-        {
-            Debug.Log("Player is death");
-        }
+
     }
 }

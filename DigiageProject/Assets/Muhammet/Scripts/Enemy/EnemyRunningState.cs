@@ -19,7 +19,7 @@ public class EnemyRunningState : EnemyBaseState
     {
         //if(other.TryGetComponent(out MagicClass magic))
         //{
-            state.SwitchState(state.SlowState);
+            //state.SwitchState(state.SlowState);
         //}
     }
 }

@@ -20,7 +20,7 @@ public class PlayerStateManager : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        _currentState.OnTrigger(this, other);
+        _currentState.OnTriggerEnter(this, other);
     }
 
     public void SwitchState(PlayerBaseState state)

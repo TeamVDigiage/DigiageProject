@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private ObjectPool objectPool = null;
+    [SerializeField] private ArrowPool arrowPool = null;
     [SerializeField] private int _arrowCount;
 
 
@@ -31,7 +31,7 @@ public class PlayerAttack : MonoBehaviour
         if (_arrowCount > 0)
         {
             _arrowCount -= 1;
-            var obj = objectPool.GetPooledObject();
+            var obj = arrowPool.GetPooledObject();
             obj.transform.position = gameObject.transform.position;
         }
 

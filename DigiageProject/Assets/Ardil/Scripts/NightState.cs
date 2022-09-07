@@ -4,12 +4,14 @@ public class NightState : BiomeBaseState
 {
     private GameObject sun;
     private float skyboxTransition;
+    private float sunIntensityTransition;
 
     public override void EnterState(BiomeStateManager biome)
     {
         sun = GameObject.Find("Directional Light");
 
         skyboxTransition = RenderSettings.skybox.GetFloat("_CubemapTransition");
+        sunIntensityTransition = sun.GetComponent<Light>().intensity;
 
         Debug.Log("Enter State: NightState");
     }
@@ -20,6 +22,9 @@ public class NightState : BiomeBaseState
         {
             skyboxTransition = Mathf.Lerp(skyboxTransition, 1, Time.deltaTime / 2);
             RenderSettings.skybox.SetFloat("_CubemapTransition", skyboxTransition);
+
+            sunIntensityTransition = Mathf.Lerp(sunIntensityTransition, 0.1f, Time.deltaTime / 2);
+            sun.GetComponent<Light>().intensity = sunIntensityTransition;
         }
 
         sun.transform.rotation = Quaternion.RotateTowards(sun.transform.rotation, Quaternion.Euler(-90, -70, 0), 20 * Time.deltaTime);

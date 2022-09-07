@@ -26,5 +26,9 @@ public class ScoreSystem : MonoBehaviour
         //}
         score += Time.deltaTime * inc;
         scoreText.text = "" + (int)score;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayfabManager.Instance.SendLeaderboard((int)score);
+        }
     }
 }

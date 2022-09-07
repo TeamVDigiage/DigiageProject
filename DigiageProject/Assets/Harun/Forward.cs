@@ -10,6 +10,6 @@ public class Forward : MonoBehaviour
     }
     void Update()
     {
-        transform.Translate(Vector3.right * Time.deltaTime * 2);
+        transform.Translate(Vector3.back * Time.deltaTime * 5f);
     }
 }

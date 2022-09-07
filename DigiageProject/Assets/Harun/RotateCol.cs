@@ -4,22 +4,37 @@ using UnityEngine;
 
 public class RotateCol : MonoBehaviour
 {
-    bool rotate = false;
+    public static RotateCol instance;
+    public bool rotate = false;
+    bool inc = true;
     GameObject rotateObject;
+    private void Awake()
+    {
+        instance = this;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Rotate"))
         {
             rotateObject = other.gameObject;
-            Debug.Log(gameObject.transform.rotation.eulerAngles.y);
+            rotate = true;
+        }
+        if (other.gameObject.CompareTag("RotateTour") && gameObject.name == "Player")
+        {
+            ScoreSystem.instance.inc *= 5;
+            rotateObject = other.gameObject;
             rotate = true;
         }
     }
     private void Update()
     {
-        if (rotate)
+        if (rotate && gameObject.name != "RotateCam")
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, rotateObject.transform.rotation.eulerAngles.y, 0), Time.deltaTime * 3);
+        }
+        if (rotate && gameObject.name == "RotateCam")
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, rotateObject.transform.rotation.eulerAngles.y - 180, 0), Time.deltaTime * 3);
         }
     }
 }

@@ -4,18 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< Updated upstream
-  - Enemy
+  - Night
+  - Day
+  - Twilight
   - Arrow
   - CollectableArrows
-=======
+  - Enemy
   - Rotate
->>>>>>> Stashed changes
+  - RotateTour
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - RotatableObject
+  - 
   - Water
   - UI
   - 

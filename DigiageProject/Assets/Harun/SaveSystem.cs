@@ -12,6 +12,7 @@ public class SaveSystem : MonoBehaviour
     [SerializeField] TextMeshProUGUI coin;
     int coins;
     //string coins;
+    public List<GameObject> prefabs;
     private void Start()
     {
         so = SaveManager.Load();
@@ -41,10 +42,20 @@ public class SaveSystem : MonoBehaviour
                     coins -= objCoins;
                     coin.text = "" + coins;
                     PlayerPrefs.SetInt("Coin", coins);
-                    //objCoins = 0;
-                    objCoin.GetComponent<TextMeshProUGUI>().text = "";
-                    Destroy(objCoin);
-                    //objCoin.gameObject.SetActive(false);
+                    objCoins = 0;
+                    objCoin.GetComponent<TextMeshProUGUI>().text = "" + objCoins;
+                    objCoin.gameObject.SetActive(false);
+                    //Destroy(objCoin);
+                    for (int i = 0; i < prefabs.Count; i++)
+                    {
+                        if (prefabs[i].name == objCoin.name)
+                        {
+                            Debug.Log("sada");
+                            //objCoin.gameObject.SetActive(false);
+                            prefabs[i].gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "0";
+                            prefabs[i].gameObject.SetActive(false);
+                        }
+                    }
                 }
             }
         }

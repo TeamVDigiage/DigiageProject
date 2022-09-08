@@ -8,7 +8,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (other.CompareTag("Arrow"))
         {
-            other.GetComponent<SpellMove>().Move();
+            other.GetComponent<SpellMove>().UseMove();
             other.GetComponent<SpellPower>().UseSpellPower();
         }
     }

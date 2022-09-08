@@ -37,7 +37,7 @@ public class SpellPower : MonoBehaviour
     }
     void GrowUpAction()
     {
-        transform.DOScale(new Vector3(3, 3, 3), 3).OnComplete(() => transform.parent = null);
+        transform.DOScale(new Vector3(3, 3, 3), 3).OnComplete(() => EffectEnd());
     }
     void ExceptionAction()
     {
@@ -50,5 +50,10 @@ public class SpellPower : MonoBehaviour
     void FlyAction()
     {
 
+    }
+    void EffectEnd()
+    {
+        transform.parent = null;
+        gameObject.SetActive(false);
     }
 }

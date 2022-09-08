@@ -8,7 +8,7 @@ using PlayFab.ClientModels;
 public class LeaderBoard : MonoBehaviour
 {
     public static LeaderBoard Instance;
-    public TextMeshProUGUI leaderboard;
+    public List<TextMeshProUGUI> leaderboard;
     PlayfabManager playfab;
     private void Awake()
     {

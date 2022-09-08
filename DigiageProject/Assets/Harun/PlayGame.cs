@@ -9,4 +9,12 @@ public class PlayGame : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+    public void Leaderboard()
+    {
+        SceneManager.LoadScene(2);
+    }
+    public void GoMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

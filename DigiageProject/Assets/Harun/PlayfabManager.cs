@@ -7,6 +7,7 @@ using PlayFab.ClientModels;
 public class PlayfabManager : MonoBehaviour
 {
     public static PlayfabManager Instance;
+    public int index = 0;
     private void Awake()
     {
         Instance = this;
@@ -73,7 +74,9 @@ public class PlayfabManager : MonoBehaviour
         foreach (var item in result.Leaderboard)
         {
             Debug.Log(item.Position + "" + item.PlayFabId + "" + item.StatValue);
-            LeaderBoard.Instance.leaderboard.text = "" + item.StatValue;
+            LeaderBoard.Instance.leaderboard[index].text = (item.Position + 1) + "     " + item.StatValue;
+            index++;
         }
+        index = 0;
     }
 }

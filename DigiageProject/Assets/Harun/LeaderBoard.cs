@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using PlayFab;
-using PlayFab.ClientModels;
 
 public class LeaderBoard : MonoBehaviour
 {
@@ -22,7 +20,7 @@ public class LeaderBoard : MonoBehaviour
     public void Run()
     {
         Debug.Log("adaads");
-        playfab.GetLeaderboard();
+        //playfab.GetLeaderboard();
     }
     private void Update()
     {

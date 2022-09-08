@@ -15,9 +15,13 @@ public class PlayGame : MonoBehaviour
     }
     public void Play()
     {
-        playfab.SubmitNameButton();
-        PlayerPrefs.SetString("Users", usersName.text);
-        SceneManager.LoadScene(1);
+        var length = usersName.text.ToCharArray();
+        if (length.Length > 5)
+        {
+            playfab.SubmitNameButton();
+            PlayerPrefs.SetString("Users", usersName.text);
+            SceneManager.LoadScene(1);
+        }
     }
     public void Leaderboard()
     {

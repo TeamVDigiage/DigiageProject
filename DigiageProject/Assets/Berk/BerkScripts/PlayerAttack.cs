@@ -6,7 +6,12 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private ArrowPool arrowPool = null;
     [SerializeField] private int _arrowCount;
+    PlayerAnimation playerAnimation;
 
+    private void Start()
+    {
+        playerAnimation = GetComponent<PlayerAnimation>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -33,6 +38,9 @@ public class PlayerAttack : MonoBehaviour
             _arrowCount -= 1;
             var obj = arrowPool.GetPooledObject();
             obj.transform.position = gameObject.transform.position;
+
+            //Animasyon Eklendiğinde Açılacak
+            //playerAnimation.ShootAnimation();
         }
 
     }

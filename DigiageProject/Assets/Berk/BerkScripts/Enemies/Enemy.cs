@@ -7,6 +7,14 @@ public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected int enemyHealth;
     [SerializeField] Transform spawnPoint;
+    int startHealth;
+    EnemyAnimation enemyAnimation;
+
+    private void Start()
+    {
+        enemyHealth = startHealth;
+        enemyAnimation = GetComponent<EnemyAnimation>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,11 +26,17 @@ public abstract class Enemy : MonoBehaviour
                 enemyHealth -= 1;
 
             else if (enemyHealth == 1)
-
-                //Destroy(gameObject); //Enemy object pool yapıldığında destroy edilmeyecek, false edilecek.
-                transform.position = spawnPoint.position;
+            {
+                enemyAnimation.DyingAnimation();
+                StartCoroutine(DeathDelay());
+            }       
         }
     }
 
-
+    public IEnumerator DeathDelay()
+    {
+        enemyHealth = startHealth;
+        yield return new WaitForSeconds(0.5f);
+        transform.position = spawnPoint.position;
+    }
 }

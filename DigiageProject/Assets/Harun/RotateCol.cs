@@ -20,11 +20,10 @@ public class RotateCol : MonoBehaviour
             rotate = true;
             Debug.Log("b");
         }
-        if (other.gameObject.CompareTag("RotateTour") && gameObject.name == "Player")
+        if (other.gameObject.CompareTag("RotateTour") && gameObject.CompareTag("Player"))
         {
-            ScoreSystem.instance.inc *= 5;
-            rotateObject = other.gameObject;
-            rotate = true;
+            ScoreSystem.instance.inc *= 3;
+            rotate = false;
         }
     }
     private void Update()

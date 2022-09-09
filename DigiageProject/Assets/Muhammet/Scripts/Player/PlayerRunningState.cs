@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerRunningState : PlayerBaseState
 {
-    private float _speed = 10f;
+    private float _speed = 1.8f;
     private float _horizontalSpeed = 15f;
 
     public override void EnterState(PlayerStateManager state)

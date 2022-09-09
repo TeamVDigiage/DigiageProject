@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 5774581032418793508}
   - component: {fileID: 4482243532491691914}
   - component: {fileID: 7344079273437645649}
+  - component: {fileID: -6683929947336847279}
+  - component: {fileID: -4321650946811498095}
   m_Layer: 0
   m_Name: Spell 4
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,8 +94,33 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4834918866269054126}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6683929947336847279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834918866269054126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a7feb375f9ea424893d36eb694d3fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4321650946811498095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834918866269054126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab8359fe42ceb74eb2eac581362784b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pover: 0

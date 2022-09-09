@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyRunningState : EnemyBaseState
 {
-    private float _speed = 12f;
+    private float _speed = 2f;
 
     public override void EnterState(EnemyStateManager state)
     {
@@ -17,9 +17,9 @@ public class EnemyRunningState : EnemyBaseState
 
     public override void OnTriggerEnter(EnemyStateManager state, Collider other)
     {
-        //if(other.TryGetComponent(out MagicClass magic))
-        //{
-            //state.SwitchState(state.SlowState);
-        //}
+        if(other.TryGetComponent(out SpellPower spell))
+        {
+            state.SwitchState(state.SlowState);
+        }
     }
 }

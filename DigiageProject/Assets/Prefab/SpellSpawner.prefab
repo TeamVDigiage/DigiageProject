@@ -123,8 +123,16 @@ MonoBehaviour:
   - {fileID: 5492243778658035978}
   - {fileID: 3063699242822358233}
   - {fileID: 3056721165701842876}
-  spells: []
-  spawnDelay: 0
+  spells:
+  - {fileID: 4834918866269054126, guid: 459eb9ee79635014e9617873674d5ef6, type: 3}
+  - {fileID: 4834918866269054126, guid: bb1901819ec105947a07bf1f56a5d466, type: 3}
+  - {fileID: 4834918866269054126, guid: 91661d3e1488f8b40899b44f0ae01455, type: 3}
+  - {fileID: 4834918866269054126, guid: c819e94ecf0860447b1bfffefbf162e5, type: 3}
+  - {fileID: 4834918866269054126, guid: f699a538c3b9e1d4b8fa688906b68f32, type: 3}
+  - {fileID: 4834918866269054126, guid: c07165946c1c5404cbde58ca281933f9, type: 3}
+  - {fileID: 4834918866269054126, guid: b15fb7bb069eaad4b89aaa1832e4348b, type: 3}
+  - {fileID: 4834918866269054126, guid: 4fbec20be05bede41a64caefd1fbe53f, type: 3}
+  spawnDelay: 4
 --- !u!1 &6558494372986638358
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,6 @@ public class LeaderBoard : MonoBehaviour
 {
     public static LeaderBoard Instance;
     public List<TextMeshProUGUI> leaderboard;
-    public List<TextMeshProUGUI> leaderboardName;
     PlayfabManager playfab;
     private void Awake()
     {

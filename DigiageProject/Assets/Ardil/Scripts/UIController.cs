@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
     public Button _newGameButton;
     public Button _exitGameButton;
     public Button _leaderBoardButton;
+    public PlayfabManager playfab;
 
     public bool isOpened;
     void Start()
@@ -33,6 +34,7 @@ public class UIController : MonoBehaviour
     }
     public void OpenLeaderBoard()
     {
+        playfab.GetLeaderboard();
         isOpened = _leaderBoardUI.activeSelf;
         _leaderBoardUI.SetActive(!isOpened);
     }

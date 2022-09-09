@@ -94,7 +94,7 @@ public class PlayfabManager : MonoBehaviour
         foreach (var item in result.Leaderboard)
         {
             Debug.Log(item.Position + "" + item.DisplayName + "" + item.StatValue);
-            LeaderBoard.Instance.leaderboardName[index].text = "        " + (item.Position + 1);
+            //LeaderBoard.Instance.leaderboardName[index].text = "        " + (item.Position + 1);
             LeaderBoard.Instance.leaderboard[index].text = "        " + item.StatValue;
             index++;
         }

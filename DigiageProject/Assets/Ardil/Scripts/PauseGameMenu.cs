@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PauseGameMenu : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class PauseGameMenu : MonoBehaviour
     public Button _mainMenuButton;
     public Button _infoButton;
     public Button _resumeButton;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI score;
+    public TextMeshProUGUI distance;
 
 
     void Start()
@@ -26,9 +30,12 @@ public class PauseGameMenu : MonoBehaviour
         _resumeGameButton.onClick.AddListener(ResumeGame);
         _newGameButton.onClick.AddListener(RestartGame);
         _infoButton.onClick.AddListener(OpenInfoMenu);
+        _mainMenuButton.onClick.AddListener(BackToMainMenu);
     }
     private void Update()
     {
+        distance.text = "DISTANCE: " + int.Parse(score.text);
+        scoreText.text = "SCORE: " + int.Parse(score.text);
         Debug.Log(Time.deltaTime);
     }
 
@@ -51,10 +58,12 @@ public class PauseGameMenu : MonoBehaviour
     }
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        PlayfabManager.Instance.SendLeaderboard((int)ScoreSystem.instance.score);
+        SceneManager.LoadScene("Start Menu");
     }
     public void RestartGame()
     {
+        PlayfabManager.Instance.SendLeaderboard((int)ScoreSystem.instance.score);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void OpenInfoMenu()

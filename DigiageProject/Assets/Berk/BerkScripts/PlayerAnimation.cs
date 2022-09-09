@@ -13,7 +13,7 @@ public class PlayerAnimation : MonoBehaviour
 
     public void ShootAnimation()
     {
-        anim.Play("Shoot");
+        anim.Play("Gun");
     }
 
     public void DyingAnimation()

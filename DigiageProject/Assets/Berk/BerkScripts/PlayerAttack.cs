@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private ArrowPool arrowPool = null;
-    [SerializeField] private int _arrowCount;
+    public int arrowCount;
     PlayerAnimation playerAnimation;
 
     private void Start()
@@ -24,18 +24,18 @@ public class PlayerAttack : MonoBehaviour
     {
         if (other.gameObject.CompareTag("CollectableArrows"))
         {
-            _arrowCount += 4;
+            arrowCount += 4;
             other.gameObject.SetActive(false);
         }
 
-        Debug.Log("Arrows:" + _arrowCount);
+        Debug.Log("Arrows:" + arrowCount);
     }
 
     void Shoot()
     {
-        if (_arrowCount > 0)
+        if (arrowCount > 0)
         {
-            _arrowCount -= 1;
+            arrowCount -= 1;
             var obj = arrowPool.GetPooledObject();
             obj.transform.position = gameObject.transform.position;
 

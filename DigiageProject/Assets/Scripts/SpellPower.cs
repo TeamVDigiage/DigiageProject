@@ -42,7 +42,7 @@ public class SpellPower : MonoBehaviour
     }
     void ExceptionAction()
     {
-
+       
     }
     void BlindAction()
     {

@@ -13,6 +13,7 @@ public class SpellPower : MonoBehaviour
         Fly
     }
     [SerializeField] powers _pover;
+    [SerializeField] ParticleSystem effect;
 
     // use at the player colision 
     public void UseSpellPower()
@@ -53,7 +54,9 @@ public class SpellPower : MonoBehaviour
     }
     void EffectEnd()
     {
+
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        effect.Play();
         transform.parent = null;
-        gameObject.SetActive(false);
     }
 }

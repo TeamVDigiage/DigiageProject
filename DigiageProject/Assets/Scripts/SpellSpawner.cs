@@ -2,27 +2,23 @@ using UnityEngine;
 
 public class SpellSpawner : MonoBehaviour
 {
-    //spells and spawnPoint lenths must be equal
-    [SerializeField] private Transform[] upSpawnPoint;
-    [SerializeField] private GameObject[] upSpells;
+
     [SerializeField] private Transform[] spawnPoint;
     [SerializeField] private GameObject[] spells;
     [SerializeField] private float spawnDelay;
     private GameObject[] pool;
-    private GameObject[] upPool;
+
     private float spawnRare;
     private int i;
     private void Start()
     {
-        MakePool(pool,spells);
-        MakePool(upPool, upSpells);
+        MakePool(pool, spells);
     }
     private void Update()
     {
         SpellSpawn(pool, spawnPoint);
-        SpellSpawn(upPool, upSpawnPoint);
     }
-    public void SpellSpawn(GameObject [] pool,Transform [] spawnPoint)
+    public void SpellSpawn(GameObject[] pool, Transform[] spawnPoint)
     {
         if (Time.time > spawnRare)
         {
@@ -33,13 +29,14 @@ public class SpellSpawner : MonoBehaviour
             }
             pool[i].transform.position = transform.position;
             pool[i].SetActive(true);
+            pool[i].GetComponent<MeshRenderer>().enabled = true;
             pool[i].transform.localScale = Vector3.one;
             pool[i].transform.position = spawnPoint[spawnindex].position;
             i++;
             spawnRare = Time.time + spawnDelay;
         }
     }
-    void MakePool(GameObject[]pool,GameObject[]spells)
+    void MakePool(GameObject[] pool, GameObject[] spells)
     {
         pool = new GameObject[spells.Length];
         for (int i = 0; i < pool.Length; i++)

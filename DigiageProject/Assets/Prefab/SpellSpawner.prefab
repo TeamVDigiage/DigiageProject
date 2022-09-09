@@ -114,21 +114,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03e118936812e7c4c96942e6396bc6c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upSpawnPoint:
-  - {fileID: 5614901923268294157}
-  - {fileID: 5492243778658035978}
-  - {fileID: 3063699242822358233}
-  - {fileID: 3056721165701842876}
-  upSpells:
-  - {fileID: 4834918866269054126, guid: f699a538c3b9e1d4b8fa688906b68f32, type: 3}
-  - {fileID: 4834918866269054126, guid: c07165946c1c5404cbde58ca281933f9, type: 3}
-  - {fileID: 4834918866269054126, guid: b15fb7bb069eaad4b89aaa1832e4348b, type: 3}
-  - {fileID: 4834918866269054126, guid: 4fbec20be05bede41a64caefd1fbe53f, type: 3}
   spawnPoint:
   - {fileID: 6558494372986638359}
   - {fileID: 6558494373613461628}
   - {fileID: 6558494373094129468}
   - {fileID: 6558494373880951059}
+  - {fileID: 5614901923268294157}
+  - {fileID: 5492243778658035978}
+  - {fileID: 3063699242822358233}
+  - {fileID: 3056721165701842876}
   spells: []
   spawnDelay: 0
 --- !u!1 &6558494372986638358

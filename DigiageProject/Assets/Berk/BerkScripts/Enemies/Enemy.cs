@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public abstract class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [SerializeField] protected int enemyHealth;
     [SerializeField] Transform spawnPoint;
     //int startHealth;
     //EnemyAnimation enemyAnimation;
 
-    private void Start()
-    {
-        //enemyHealth = startHealth;
-        //enemyAnimation = GetComponent<EnemyAnimation>();
-    }
+    //private void Start()
+    //{
+    //    enemyHealth = startHealth;
+    //    enemyAnimation = GetComponent<EnemyAnimation>();
+    //}
 
     private void OnTriggerEnter(Collider other)
     {

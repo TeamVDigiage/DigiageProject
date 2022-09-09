@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public abstract class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [SerializeField] protected int enemyHealth;
     [SerializeField] Transform spawnPoint;
-    int startHealth;
-    EnemyAnimation enemyAnimation;
+    //int startHealth;
+    //EnemyAnimation enemyAnimation;
 
-    private void Start()
-    {
-        enemyHealth = startHealth;
-        enemyAnimation = GetComponent<EnemyAnimation>();
-    }
+    //private void Start()
+    //{
+    //    enemyHealth = startHealth;
+    //    enemyAnimation = GetComponent<EnemyAnimation>();
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,16 +27,17 @@ public abstract class Enemy : MonoBehaviour
 
             else if (enemyHealth == 1)
             {
-                enemyAnimation.DyingAnimation();
-                StartCoroutine(DeathDelay());
+                transform.position = spawnPoint.position;
+                //enemyAnimation.DyingAnimation();
+                //StartCoroutine(DeathDelay());
             }       
         }
     }
 
-    public IEnumerator DeathDelay()
-    {
-        enemyHealth = startHealth;
-        yield return new WaitForSeconds(0.5f);
-        transform.position = spawnPoint.position;
-    }
+    //public IEnumerator DeathDelay()
+    //{
+    //    enemyHealth = startHealth;
+    //    yield return new WaitForSeconds(0.5f);
+    //    transform.position = spawnPoint.position;
+    //}
 }

@@ -18,6 +18,7 @@ public class PauseGameMenu : MonoBehaviour
     public Button _infoButton;
     public Button _resumeButton;
 
+
     void Start()
     {
         isGamePaused = false;
@@ -68,6 +69,7 @@ public class PauseGameMenu : MonoBehaviour
         gameplayUI.SetActive(true);
         Time.timeScale = 1f;
     }
+    
 
 
 }

@@ -7,7 +7,7 @@ public class RotateCol : MonoBehaviour
     public static RotateCol instance;
     public bool rotate = false;
     bool inc = true;
-    GameObject rotateObject;
+    [SerializeField] GameObject rotateObject;
     private void Awake()
     {
         instance = this;
@@ -18,6 +18,7 @@ public class RotateCol : MonoBehaviour
         {
             rotateObject = other.gameObject;
             rotate = true;
+            Debug.Log("b");
         }
         if (other.gameObject.CompareTag("RotateTour") && gameObject.name == "Player")
         {
@@ -28,13 +29,15 @@ public class RotateCol : MonoBehaviour
     }
     private void Update()
     {
+        //Debug.Log(rotateObject.transform.rotation.eulerAngles);
         if (rotate && gameObject.name != "RotateCam")
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, rotateObject.transform.rotation.eulerAngles.y, 0), Time.deltaTime * 3);
+            Debug.Log("a");
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, rotateObject.transform.rotation.eulerAngles.y, 0), Time.deltaTime * 6);
         }
         if (rotate && gameObject.name == "RotateCam")
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, rotateObject.transform.rotation.eulerAngles.y - 180, 0), Time.deltaTime * 3);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, rotateObject.transform.rotation.eulerAngles.y - 180, 0), Time.deltaTime * 6);
         }
     }
 }

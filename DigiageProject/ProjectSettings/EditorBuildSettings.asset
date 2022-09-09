@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Harun/Leaderboard.unity
     guid: e9e08c1989cce894f885d8ac9674802e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Harun/Harun.unity
     guid: b55aebc78f7b76a4aaa1d1a2dc4cf1c4
   m_configObjects: {}

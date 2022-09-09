@@ -23,38 +23,38 @@ public class PlayfabManager : MonoBehaviour
     {
         //Login();
     }
-    public void Login()
-    {
-        var request = new LoginWithCustomIDRequest
-        {
-            CustomId = "Tutorial",
-            CreateAccount = true,
-            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
-            {
-                GetPlayerProfile = true
-            }
-        };
-        PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnError);
-    }
-    void OnLoginSuccess(LoginResult result)
-    {
-        string name = null;
-        if (result.InfoResultPayload.PlayerProfile != null)
-            name = result.InfoResultPayload.PlayerProfile.DisplayName;
-    }
-    //void Login()
+    //public void Login()
     //{
     //    var request = new LoginWithCustomIDRequest
     //    {
-    //        CustomId = SystemInfo.deviceUniqueIdentifier,
-    //        CreateAccount = true
+    //        CustomId = "Tutorial",
+    //        CreateAccount = true,
+    //        InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
+    //        {
+    //            GetPlayerProfile = true
+    //        }
     //    };
-    //    PlayFabClientAPI.LoginWithCustomID(request, OnSuccess, OnError);
+    //    PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnError);
     //}
-    //void OnSuccess(LoginResult result)
+    //void OnLoginSuccess(LoginResult result)
     //{
-    //    Debug.Log("Successful");
+    //    string name = null;
+    //    if (result.InfoResultPayload.PlayerProfile != null)
+    //        name = result.InfoResultPayload.PlayerProfile.DisplayName;
     //}
+    void Login()
+    {
+        var request = new LoginWithCustomIDRequest
+        {
+            CustomId = SystemInfo.deviceUniqueIdentifier,
+            CreateAccount = true
+        };
+        PlayFabClientAPI.LoginWithCustomID(request, OnSuccess, OnError);
+    }
+    void OnSuccess(LoginResult result)
+    {
+        Debug.Log("Successful");
+    }
     void OnError(PlayFabError error)
     {
         Debug.Log("Error");
@@ -94,21 +94,22 @@ public class PlayfabManager : MonoBehaviour
         foreach (var item in result.Leaderboard)
         {
             Debug.Log(item.Position + "" + item.DisplayName + "" + item.StatValue);
-            LeaderBoard.Instance.leaderboard[index].text = (item.Position + 1) + "     " + item.DisplayName + "        " + item.StatValue;
+            LeaderBoard.Instance.leaderboardName[index].text = "        " + (item.Position + 1);
+            LeaderBoard.Instance.leaderboard[index].text = "        " + item.StatValue;
             index++;
         }
         index = 0;
     }
-    public void SubmitNameButton()
-    {
-        var request = new UpdateUserTitleDisplayNameRequest
-        {
-            DisplayName = PlayGame.instance.usersName.text
-        };
-        PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate, OnError);
-    }
-    void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
-    {
-        Debug.Log("Successful Name Save");
-    }
+    //public void SubmitNameButton()
+    //{
+    //    var request = new UpdateUserTitleDisplayNameRequest
+    //    {
+    //        DisplayName = PlayGame.instance.usersName.text
+    //    };
+    //    PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate, OnError);
+    //}
+    //void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
+    //{
+    //    Debug.Log("Successful Name Save");
+    //}
 }

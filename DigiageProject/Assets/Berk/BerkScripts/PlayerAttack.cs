@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
             other.gameObject.SetActive(false);
         }
 
-        Debug.Log(_arrowCount);
+        Debug.Log("Arrows:" + _arrowCount);
     }
 
     void Shoot()

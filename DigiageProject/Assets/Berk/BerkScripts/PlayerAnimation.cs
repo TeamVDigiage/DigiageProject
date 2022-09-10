@@ -8,7 +8,7 @@ public class PlayerAnimation : MonoBehaviour
 
     private void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     public void ShootAnimation()

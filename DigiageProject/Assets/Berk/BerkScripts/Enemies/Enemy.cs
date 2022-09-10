@@ -7,14 +7,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected int enemyHealth;
     [SerializeField] Transform spawnPoint;
     int _startHealth;
-    KillCounter killCounter;
+    public static KillCounter killCounter = new KillCounter();
     //EnemyAnimation enemyAnimation;
 
 
     private void Start()
     {
-        enemyHealth = _startHealth;
-        killCounter = GetComponent<KillCounter>();
+        _startHealth = enemyHealth;
         //enemyAnimation = GetComponent<EnemyAnimation>();
     }
 
@@ -27,15 +26,17 @@ public class Enemy : MonoBehaviour
             if (enemyHealth > 1)
                 enemyHealth -= 1;
 
-            else if (enemyHealth == 1)
+            else if (enemyHealth <= 1)
             {
-
                 transform.position = spawnPoint.position;
                 enemyHealth = _startHealth;
-                killCounter.CountKill();
+        
+                    killCounter.CountKill();
+                
+                
                 //enemyAnimation.DyingAnimation();
                 //StartCoroutine(DeathDelay());
-            }       
+            }
         }
     }
 

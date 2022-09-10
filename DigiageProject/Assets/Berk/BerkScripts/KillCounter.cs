@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KillCounter : MonoBehaviour
+public class KillCounter 
 {
-    public int killCount;
+    public static int killCount;
 
     public void Start()
     {

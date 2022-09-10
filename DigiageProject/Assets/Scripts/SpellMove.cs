@@ -13,10 +13,6 @@ public class SpellMove : MonoBehaviour
     }
     [SerializeField] MoveStyle moveStyle;
     Transform enemySpellTarget;
-    private void Start()
-    {
-        enemySpellTarget = GameObject.FindGameObjectWithTag("Enemy").transform;
-    }
     public void UseMove()
     {
         switch (moveStyle)
@@ -35,7 +31,7 @@ public class SpellMove : MonoBehaviour
     void Jump()
     {
         enemySpellTarget = GameObject.FindGameObjectWithTag("Enemy").transform;
-        transform.parent = enemySpellTarget;
+       
         transform.GetChild(0).gameObject.SetActive(true);
         transform.DOLocalJump(enemySpellTarget.transform.position, 0.6f, 3, 2).OnComplete(() => SlowDownEnemy());
 
@@ -44,12 +40,11 @@ public class SpellMove : MonoBehaviour
     {
         enemySpellTarget = GameObject.FindGameObjectWithTag("Enemy").transform;
         transform.GetChild(0).gameObject.SetActive(false);
-        transform.parent = enemySpellTarget;
+      
         transform.DOMove(enemySpellTarget.transform.position, 0.6f).OnComplete(()=>SlowDownEnemy());
     }
     void SlowDownEnemy()
     {
-        transform.parent = null;
     }
 
 

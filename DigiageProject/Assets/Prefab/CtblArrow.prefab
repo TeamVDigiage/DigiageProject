@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3350826746557932353}
   - component: {fileID: 1814771126278663396}
   - component: {fileID: 4524899300058683438}
-  - component: {fileID: 6427732234399676840}
+  - component: {fileID: 5215708499809579401}
   m_Layer: 0
   m_Name: CtblArrow
   m_TagString: CollectableArrows
@@ -86,8 +86,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6427732234399676840
-BoxCollider:
+--- !u!135 &5215708499809579401
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -97,8 +97,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8342691, y: 0.40429413, z: 0.4985323}
-  m_Center: {x: -0.108044505, y: 0.02551306, z: 0.018805835}
+  m_Radius: 0.49240857
+  m_Center: {x: 0.0080581475, y: 0.010308645, z: -0.000035633322}
 --- !u!1 &8353258831932207730
 GameObject:
   m_ObjectHideFlags: 0

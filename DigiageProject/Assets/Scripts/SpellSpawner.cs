@@ -34,7 +34,10 @@ public class SpellSpawner : MonoBehaviour
             pool[i].GetComponent<MeshRenderer>().enabled = true;
             pool[i].transform.localScale = Vector3.one;
             pool[i].transform.position = spawnPoint[spawnindex].position;
+            pool[i].gameObject.GetComponent<MeshRenderer>().enabled = true;
+            pool[i].gameObject.GetComponent<SphereCollider>().enabled = true;
             i++;
+            
             Debug.Log(i);
             spawnRare = Time.time + spawnDelay;
         }

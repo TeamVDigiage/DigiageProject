@@ -38,7 +38,7 @@ public class SpellPower : MonoBehaviour
     }
     void GrowUpAction()
     {
-        transform.DOScale(new Vector3(3, 3, 3), 3).OnComplete(() => EffectEnd());
+        transform.DOScale(new Vector3(3, 3, 3), 0.2f).OnComplete(() => EffectEnd());
     }
     void ExceptionAction()
     {

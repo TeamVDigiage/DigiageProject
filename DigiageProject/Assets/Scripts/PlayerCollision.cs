@@ -6,7 +6,7 @@ public class PlayerCollision : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Arrow"))
+        if (other.CompareTag("Spell"))
         {
             other.GetComponent<SpellMove>().UseMove();
             other.GetComponent<SpellPower>().UseSpellPower();

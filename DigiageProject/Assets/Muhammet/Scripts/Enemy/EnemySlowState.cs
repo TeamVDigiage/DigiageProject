@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemySlowState : EnemyBaseState
 {
     private float _slowTimer = 0f;
-    private float _speed = 13f;
+    private float _speed = 14.5f;
 
     public override void EnterState(EnemyStateManager state)
     {
@@ -21,7 +21,7 @@ public class EnemySlowState : EnemyBaseState
         Vector3 forwardMove = Vector3.forward * _speed * Time.deltaTime;
         state.GetComponent<Rigidbody>().MovePosition(state.transform.position + forwardMove);
         //
-        if(_slowTimer >= 1f)
+        if(_slowTimer >= 0.1f)
         {
             _slowTimer = 0f;
             state.SwitchState(state.RunningState);

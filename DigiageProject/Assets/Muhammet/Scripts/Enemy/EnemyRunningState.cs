@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyRunningState : EnemyBaseState
 {
-    private float _speed = 17f;
+    private float _speed = 15.5f;
 
     public override void EnterState(EnemyStateManager state)
     {
@@ -12,7 +12,7 @@ public class EnemyRunningState : EnemyBaseState
     public override void UpdateState(EnemyStateManager state)
     {
         Vector3 forwardMove = state.transform.forward * _speed * Time.deltaTime;
-        state.GetComponent<Rigidbody>().MovePosition(state.transform.position + forwardMove);
+        state.GetComponent<Rigidbody>().MovePosition(state.transform.position - forwardMove);
     }
 
     public override void OnTriggerEnter(EnemyStateManager state, Collider other)
@@ -20,6 +20,8 @@ public class EnemyRunningState : EnemyBaseState
         if(other.TryGetComponent(out SpellPower spell))
         {
             state.SwitchState(state.SlowState);
+            //spell.gameObject.GetComponent<MeshRenderer>().enabled=false;
+            spell.gameObject.GetComponent<SphereCollider>().enabled = false;
         }
     }
 }

@@ -36,7 +36,7 @@ public class RotateCol : MonoBehaviour
         }
         if (rotate && gameObject.name == "RotateCam")
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, rotateObject.transform.rotation.eulerAngles.y - 180, 0), Time.deltaTime * 6);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, rotateObject.transform.rotation.eulerAngles.y , 0), Time.deltaTime * 6);
         }
     }
 }

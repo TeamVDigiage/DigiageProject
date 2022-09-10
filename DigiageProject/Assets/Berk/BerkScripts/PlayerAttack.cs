@@ -35,12 +35,11 @@ public class PlayerAttack : MonoBehaviour
     {
         if (arrowCount > 0)
         {
+            playerAnimation.ShootAnimation();
             arrowCount -= 1;
             var obj = arrowPool.GetPooledObject();
             obj.transform.position = gameObject.transform.position;
-
-            //Animasyon Eklendiğinde Açılacak
-            //playerAnimation.ShootAnimation();
+            
         }
 
     }

@@ -2167,7 +2167,7 @@ PrefabInstance:
     - target: {fileID: 8459127411823804309, guid: 537ac2fc71b437044b39122c0965b73d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 8459127411823804309, guid: 537ac2fc71b437044b39122c0965b73d,
         type: 3}
@@ -3878,6 +3878,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621535970}
   m_CullTransparentMesh: 1
+--- !u!1 &671724194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 671724196}
+  - component: {fileID: 671724195}
+  m_Layer: 0
+  m_Name: GameOverController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &671724195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671724194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991a0cc5e00afdd46b7f5ac4b342447a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameOverPanel: {fileID: 1628759136}
+--- !u!4 &671724196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671724194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.002485, y: -0.29464054, z: 6.747759}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &704982805 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1814174028512920628, guid: 71fea54760310fb4faee02e8fe8e8323,
@@ -10554,7 +10599,7 @@ PrefabInstance:
     - target: {fileID: 3043615055077866964, guid: 7e9c19a216d891145a61559122018a44,
         type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3043615055077866964, guid: 7e9c19a216d891145a61559122018a44,
         type: 3}
@@ -10707,7 +10752,7 @@ PrefabInstance:
     - target: {fileID: 8459127411823804309, guid: 537ac2fc71b437044b39122c0965b73d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 8459127411823804309, guid: 537ac2fc71b437044b39122c0965b73d,
         type: 3}

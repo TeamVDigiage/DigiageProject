@@ -58,11 +58,13 @@ public class PauseGameMenu : MonoBehaviour
     }
     public void BackToMainMenu()
     {
+        Time.timeScale = 1;
         PlayfabManager.Instance.SendLeaderboard((int)ScoreSystem.instance.score);
         SceneManager.LoadScene("Start Menu");
     }
     public void RestartGame()
     {
+        Time.timeScale = 1;
         PlayfabManager.Instance.SendLeaderboard((int)ScoreSystem.instance.score);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

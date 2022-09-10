@@ -6,6 +6,7 @@ public class PlayerRunningState : PlayerBaseState
     private bool _isGrounded = true;
     private float _speed = 15f;
     private float _jumpForce = 4f;
+    private float _delayJumpTime = 2f;
     private float _horizontalSpeed = 4f;
 
     public override void EnterState(PlayerStateManager state)
@@ -20,11 +21,17 @@ public class PlayerRunningState : PlayerBaseState
         Vector3 horizontalMove = state.transform.right * horizontalInput * _horizontalSpeed * Time.deltaTime;
         _playerRigidbody.MovePosition(state.transform.position - forwardMove + horizontalMove);
 
-        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
+        _delayJumpTime -= Time.deltaTime;
+
+        if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && _isGrounded)
         {
-            _playerRigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.VelocityChange);
-            state.GetComponent<PlayerAnimation>().JumpingAnimation();
-            _isGrounded = false;
+            if (_delayJumpTime <= 0.0f)
+            {
+                _delayJumpTime = 2f;
+                _playerRigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.VelocityChange);
+                state.GetComponent<PlayerAnimation>().JumpingAnimation();
+                _isGrounded = false;
+            }
         }
 
         Ray ray = new Ray(state.transform.position, Vector3.down);

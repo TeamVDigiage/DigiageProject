@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameOverController : MonoBehaviour
 {
@@ -21,9 +23,14 @@ public class GameOverController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+
+    }
+
     public void SetGameOver()
     {
-        Debug.Log("Game Over Method");
+        Time.timeScale = 0;
         _gameOverPanel.SetActive(true);
     }
 }

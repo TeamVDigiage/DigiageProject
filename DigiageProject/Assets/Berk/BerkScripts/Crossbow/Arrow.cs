@@ -54,6 +54,6 @@ public class Arrow : MonoBehaviour
                 Space.World);
 
             transform.LookAt(targetPosition);
-            transform.rotation *= Quaternion.Euler(90, 0, 0);
+            transform.rotation *= Quaternion.Euler(0, -90, 0);
     }
 }

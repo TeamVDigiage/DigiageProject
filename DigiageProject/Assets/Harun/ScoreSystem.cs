@@ -28,7 +28,7 @@ public class ScoreSystem : MonoBehaviour
         scoreText.text = "" + (int)score;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            PlayfabManager.Instance.SendLeaderboard((int)score);
+            //PlayfabManager.Instance.SendLeaderboard((int)score);
         }
     }
 }

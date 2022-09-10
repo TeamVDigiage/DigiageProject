@@ -1329,6 +1329,10 @@ MonoBehaviour:
   _mainMenuButton: {fileID: 1207310857}
   _infoButton: {fileID: 2125259216}
   _resumeButton: {fileID: 133452206}
+  scoreText: {fileID: 0}
+  score: {fileID: 0}
+  distance: {fileID: 0}
+  killCount: {fileID: 2043109039}
 --- !u!4 &446874137
 Transform:
   m_ObjectHideFlags: 0

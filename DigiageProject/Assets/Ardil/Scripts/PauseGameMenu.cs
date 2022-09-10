@@ -21,6 +21,7 @@ public class PauseGameMenu : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI score;
     public TextMeshProUGUI distance;
+    public TextMeshProUGUI killCount;
 
 
     void Start()
@@ -36,6 +37,7 @@ public class PauseGameMenu : MonoBehaviour
     {
         distance.text = "DISTANCE: " + int.Parse(score.text);
         scoreText.text = "SCORE: " + int.Parse(score.text);
+        killCount.text = KillCounter.killCount.ToString();
         //Debug.Log(Time.deltaTime);
     }
 

@@ -38,7 +38,7 @@ public class SpellPower : MonoBehaviour
     }
     void GrowUpAction()
     {
-        transform.DOScale(new Vector3(3, 3, 3), 0.2f).OnComplete(() => EffectEnd());
+        transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.6f).OnComplete(() => EffectEnd());
     }
     void ExceptionAction()
     {
@@ -55,8 +55,9 @@ public class SpellPower : MonoBehaviour
     void EffectEnd()
     {
 
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        //gameObject.GetComponent<MeshRenderer>().enabled = false;
         effect.Play();
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
         transform.parent = null;
     }
 }

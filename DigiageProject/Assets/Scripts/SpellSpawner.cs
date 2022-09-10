@@ -34,18 +34,14 @@ public class SpellSpawner : MonoBehaviour
             pool[i].GetComponent<MeshRenderer>().enabled = true;
             pool[i].transform.localScale = Vector3.one;
             pool[i].transform.position = spawnPoint[spawnindex].position;
-            pool[i].gameObject.GetComponent<MeshRenderer>().enabled = true;
             pool[i].gameObject.GetComponent<SphereCollider>().enabled = true;
             i++;
-            
-            Debug.Log(i);
             spawnRare = Time.time + spawnDelay;
         }
     }
     void MakePool(GameObject[] pool, GameObject[] spells)
     {
-        //pool = new GameObject[spells.Length];
-        for (int i = 0; i < pool.Length; i++)
+        for (int i = 0; i < pool.Length-1; i++)
         {
             GameObject poolBulletObj = Instantiate(spells[i]);
             poolBulletObj.SetActive(false);

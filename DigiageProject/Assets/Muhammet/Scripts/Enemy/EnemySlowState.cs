@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemySlowState : EnemyBaseState
 {
     private float _slowTimer = 0f;
-    private float _speed = 14.5f;
+    private float _speed = 6.8f;
 
     public override void EnterState(EnemyStateManager state)
     {

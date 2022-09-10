@@ -67,7 +67,7 @@ public class PauseGameMenu : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1;
-        PlayfabManager.Instance.SendLeaderboard((int)ScoreSystem.instance.score);
+        //PlayfabManager.Instance.SendLeaderboard((int)ScoreSystem.instance.score);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void OpenInfoMenu()

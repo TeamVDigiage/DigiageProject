@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyRunningState : EnemyBaseState
 {
-    private float _speed = 15.5f;
+    private float _speed = 7.2f;
 
     public override void EnterState(EnemyStateManager state)
     {

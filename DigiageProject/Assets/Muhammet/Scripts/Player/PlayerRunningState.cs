@@ -4,7 +4,7 @@ public class PlayerRunningState : PlayerBaseState
 {
     private Rigidbody _playerRigidbody;
     private bool _isGrounded = true;
-    private float _speed = 15f;
+    private float _speed = 7f;
     private float _jumpForce = 4f;
     private float _delayJumpTime = 2f;
     private float _horizontalSpeed = 4f;

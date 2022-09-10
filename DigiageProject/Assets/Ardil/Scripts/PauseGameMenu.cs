@@ -36,7 +36,7 @@ public class PauseGameMenu : MonoBehaviour
     {
         distance.text = "DISTANCE: " + int.Parse(score.text);
         scoreText.text = "SCORE: " + int.Parse(score.text);
-        Debug.Log(Time.deltaTime);
+        //Debug.Log(Time.deltaTime);
     }
 
     public void ResumeGame()

@@ -5,6 +5,7 @@ public class PlayerDeathState : PlayerBaseState
     public override void EnterState(PlayerStateManager state)
     {
         Debug.Log("Player is death");
+        state.GetComponent<PlayerAnimation>().DyingAnimation();
         GameOverController.Instance.SetGameOver();
     }
 

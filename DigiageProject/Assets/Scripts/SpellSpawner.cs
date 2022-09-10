@@ -6,7 +6,8 @@ public class SpellSpawner : MonoBehaviour
     [SerializeField] private Transform[] spawnPoint;
     [SerializeField] private GameObject[] spells;
     [SerializeField] private float spawnDelay;
-    private GameObject[] pool;
+        
+    private GameObject[] pool = new GameObject[9];
 
     private float spawnRare;
     private int i;
@@ -33,12 +34,13 @@ public class SpellSpawner : MonoBehaviour
             pool[i].transform.localScale = Vector3.one;
             pool[i].transform.position = spawnPoint[spawnindex].position;
             i++;
+            Debug.Log(i);
             spawnRare = Time.time + spawnDelay;
         }
     }
     void MakePool(GameObject[] pool, GameObject[] spells)
     {
-        pool = new GameObject[spells.Length];
+        //pool = new GameObject[spells.Length];
         for (int i = 0; i < pool.Length; i++)
         {
             GameObject poolBulletObj = Instantiate(spells[i]);

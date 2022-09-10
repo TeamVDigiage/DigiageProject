@@ -28,6 +28,7 @@ public class SpellSpawner : MonoBehaviour
             {
                 i = 0;
             }
+            pool[i].transform.GetChild(0).gameObject.SetActive(false);
             pool[i].transform.position = transform.position;
             pool[i].SetActive(true);
             pool[i].GetComponent<MeshRenderer>().enabled = true;

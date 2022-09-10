@@ -34,12 +34,15 @@ public class SpellMove : MonoBehaviour
 
     void Jump()
     {
+
         transform.parent = enemySpellTarget;
+        transform.GetChild(0).gameObject.SetActive(false);
         transform.DOLocalJump(new Vector3(0, 0, 0), 2.0f, 3, 2).OnComplete(() => SlowDownEnemy());
 
     }
     void Move()
     {
+        transform.GetChild(0).gameObject.SetActive(false);
         transform.parent = enemySpellTarget;
         transform.DOMove(new Vector3(0, 0, 0), 2).OnComplete(()=>SlowDownEnemy());
     }

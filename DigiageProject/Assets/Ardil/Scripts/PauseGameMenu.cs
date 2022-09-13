@@ -40,7 +40,6 @@ public class PauseGameMenu : MonoBehaviour
         scoreText.text = "SCORE: " + int.Parse(score.text);
         killCount.text = KillCounter.killCount.ToString();
         arrowCount.text = PlayerAttack.arrowCount.ToString();
-        //Debug.Log(Time.deltaTime);
     }
 
     public void ResumeGame()

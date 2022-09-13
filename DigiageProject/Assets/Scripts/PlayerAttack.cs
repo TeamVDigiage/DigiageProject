@@ -13,7 +13,6 @@ public class PlayerAttack : MonoBehaviour
         playerAnimation = GetComponent<PlayerAnimation>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -41,9 +40,5 @@ public class PlayerAttack : MonoBehaviour
             obj.transform.position = gameObject.transform.position;
             
         }
-
     }
-
-
-
 }

@@ -5,10 +5,11 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     GameObject closestEnemy = null;
+
+    //Speed for arrows movement speed to enemeies
     [SerializeField] float speed = 1;
 
 
-    // Update is called once per frame
     void Update()
     {
         FindClosestEnemy();
@@ -17,8 +18,11 @@ public class Arrow : MonoBehaviour
     void FindClosestEnemy()
     {
         float distanceToClosestEnemy = Mathf.Infinity;
+
+        //Finds all game objects tagged enemy and adds to an array
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
+        //Checks every game objects distance to each other and finds closest one to the player
         foreach (GameObject currentEnemy in allEnemies)
         {
             float distanceToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
@@ -29,15 +33,18 @@ public class Arrow : MonoBehaviour
             }
         }
 
+        //if there is no on scene, arrows returns to the object pool.
         if (closestEnemy == null)
         {
             gameObject.SetActive(false);
             return;
         }
 
+
         MoveToEnemy();
     }
 
+    //Arrows moves to closest enemy which has found from FindClosestEnemy function.
     void MoveToEnemy()
     {
         Vector3 targetPosition = closestEnemy.transform.position;
@@ -53,7 +60,10 @@ public class Arrow : MonoBehaviour
                 (directionOfTravel.z * speed * Time.deltaTime),
                 Space.World);
 
+        //Rotates arrow upon enemy position to left or right
             transform.LookAt(targetPosition);
+
+        //Fixes arrow models rotation to forward.
             transform.rotation *= Quaternion.Euler(0, -90, 0);
     }
 }

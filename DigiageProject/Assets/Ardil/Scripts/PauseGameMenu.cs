@@ -22,6 +22,7 @@ public class PauseGameMenu : MonoBehaviour
     public TextMeshProUGUI score;
     public TextMeshProUGUI distance;
     public TextMeshProUGUI killCount;
+    public TextMeshProUGUI arrowCount;
 
 
     void Start()
@@ -38,6 +39,7 @@ public class PauseGameMenu : MonoBehaviour
         distance.text = "DISTANCE: " + int.Parse(score.text);
         scoreText.text = "SCORE: " + int.Parse(score.text);
         killCount.text = KillCounter.killCount.ToString();
+        arrowCount.text = PlayerAttack.arrowCount.ToString();
         //Debug.Log(Time.deltaTime);
     }
 

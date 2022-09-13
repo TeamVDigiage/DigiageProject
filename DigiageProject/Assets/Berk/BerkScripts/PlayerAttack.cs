@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private ArrowPool arrowPool = null;
-    public int arrowCount;
+    public static int arrowCount;
     PlayerAnimation playerAnimation;
 
     private void Start()

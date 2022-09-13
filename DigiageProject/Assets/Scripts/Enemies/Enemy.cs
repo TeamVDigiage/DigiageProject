@@ -8,13 +8,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] Transform spawnPoint;
     int _startHealth;
     public static KillCounter killCounter = new KillCounter();
-    //EnemyAnimation enemyAnimation;
-
 
     private void Start()
     {
         _startHealth = enemyHealth;
-        //enemyAnimation = GetComponent<EnemyAnimation>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,18 +29,8 @@ public class Enemy : MonoBehaviour
                 enemyHealth = _startHealth;
         
                     killCounter.CountKill();
-                
-                
-                //enemyAnimation.DyingAnimation();
-                //StartCoroutine(DeathDelay());
             }
         }
     }
 
-    //public IEnumerator DeathDelay()
-    //{
-
-    //    yield return new WaitForSeconds(0.5f);
-    //    transform.position = spawnPoint.position;
-    //}
 }
